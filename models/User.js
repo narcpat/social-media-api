@@ -49,7 +49,7 @@ const UserSchema = new Schema(
   }
 );
 
-CommentSchema.virtual("friendCount").get(function () {
+UserSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 

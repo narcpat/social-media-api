@@ -33,7 +33,7 @@ const thoughtController = {
   },
 
   // create a new user
-  createThought({ body }, res) {
+  addThought({ body }, res) {
     Thought.create(body)
       .then(dbThoughtData => res.json(dbThoughtData))
       .catch(err => res.json(err));
@@ -56,7 +56,7 @@ const thoughtController = {
   },
 
   // delete a user
-  deleteThought({ params }, res) {
+  removeThought({ params }, res) {
     Thought.findByIdAndDelete({ _id: params.id })
       .then(dbThoughtData => res.json(dbThoughtData))
       .catch(err => res.json(err));
